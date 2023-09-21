@@ -9,8 +9,19 @@
 </head>
 
 <body>
-	ciaocc
-	<button id="action">Download csv</button>
+	 <form id="form">
+          Type your first name: <input type="text" name="FirstName" size="20"><br>
+          Type your last name: <input type="text" name="LastName" size="20"><br>
+    
+          <input type="button" value="submit" id="action" >
+        </form>
+	
+	\n
+	
+	ciaos \n
+
+	
+//	<button id="action">Download csv</button>
 
 	<script type="text/javascript">
 
@@ -61,15 +72,18 @@ const csvmaker = function (data) {
 	return csvRows.join('\n')
 }
 
-const get = async function () {
+const get = async function (event) {
 
 	// JavaScript object
-	const data = {
-		id: 1,
-		name: "Geeks",
-		profession: "developer"
-	}
-
+//	const data = {
+//		id: 1,
+//		name: "Geeks",
+//		profession: "developer"
+//	}
+event.preventDefault();
+	const myFormData = new FormData(event.target);
+        const data = Object.fromEntries(myFormData.entries());
+	
 	const csvdata = csvmaker(data);
 	download(csvdata);
 }
