@@ -9,20 +9,23 @@
 </head>
 
 <body>
-	 <form id="form">
-          Type your first name: <input type="text" name="FirstName" size="20"><br>
-          Type your last name: <input type="text" name="LastName" size="20"><br>
-    
-          <input type="button" value="submit" id="action" >
-        </form>
-	
-	\n
-	
-	ciaos \n
 
+	<form>
+    <div class="form-control">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" />
+    </div>
+    <div class="form-control">
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" />
+    </div>
+    <div class="form-control">
+        <label for="message">Enter a Message</label>
+        <textarea id="message" name="message" rows="6" cols="65"></textarea>
+    </div>
+    <button class="btn" type="submit">Send</button>
+</form>
 	
-//	<button id="action">Download csv</button>
-
 	<script type="text/javascript">
 
 		const download = function (data) {
@@ -72,7 +75,20 @@ const csvmaker = function (data) {
 	return csvRows.join('\n')
 }
 
-const get = async function (event) {
+		function callbackFunction(event) {
+    event.preventDefault();
+    const myFormData = new FormData(event.target);
+    console.log(myFormData);
+
+     const data = Object.fromEntries(myFormData.entries());
+	
+	const csvdata = csvmaker(data);
+	download(csvdata);
+
+			
+}
+
+//const get = async function (event) {
 
 	// JavaScript object
 //	const data = {
@@ -80,19 +96,20 @@ const get = async function (event) {
 //		name: "Geeks",
 //		profession: "developer"
 //	}
-event.preventDefault();
-	const myFormData = new FormData(event.target);
-        const data = Object.fromEntries(myFormData.entries());
-	
-	const csvdata = csvmaker(data);
-	download(csvdata);
-}
+//event.preventDefault();
+//	const myFormData = new FormData(event.target);
+   
 
 // Getting element by id and adding
 // eventlistener to listen everytime
 // button get pressed
-const btn = document.getElementById('action');
-btn.addEventListener('click', get);
+
+const form = document.getElementById('contact-form');
+
+form.addEventListener('submit', callbackFunction);
+		
+//const btn = document.getElementById('action');
+//btn.addEventListener('click', get);
 		</script>
 </body>
 
