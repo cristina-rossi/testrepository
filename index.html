@@ -25,7 +25,7 @@
         <label for="message">Enter a Message</label>
         <textarea id="message" name="message" rows="6" cols="65"></textarea>
     </div>
-    <button class="btn" type="submit">Send</button>
+    <button id="bbb" class="btn" type="submit">Send</button>
 </form>
 	
 	<script type="text/javascript">
@@ -115,9 +115,14 @@ const data = {
 // eventlistener to listen everytime
 // button get pressed
 
-const form = document.getElementById('contact-form');
+//const form = document.getElementById('contact-form');
 
-form.addEventListener('submit', callbackFunction);
+//form.addEventListener('submit', callbackFunction);
+
+		
+
+const form = document.getElementById('bbb');
+form.addEventListener('click', callbackFunction);
 		
 //const btn = document.getElementById('action');
 //btn.addEventListener('click', get);
