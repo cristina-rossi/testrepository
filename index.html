@@ -10,6 +10,8 @@
 
 <body>
 
+	ABC
+
 	<form>
     <div class="form-control">
         <label for="name">Full Name</label>
@@ -77,11 +79,19 @@ const csvmaker = function (data) {
 
 	const callbackFunction = async function (event) {
 //		function callbackFunction(event) {
-    event.preventDefault();
-    const myFormData = new FormData(event.target);
-    console.log(myFormData);
+ 
 
-     const data = Object.fromEntries(myFormData.entries());
+const data = {
+		id: 1,
+		name: "Geeks",
+		profession: "developer"
+	}
+		
+//		event.preventDefault();
+//    const myFormData = new FormData(event.target);
+//    console.log(myFormData);
+
+//     const data = Object.fromEntries(myFormData.entries());
 	
 	const csvdata = csvmaker(data);
 	download(csvdata);
