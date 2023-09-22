@@ -81,17 +81,17 @@ const csvmaker = function (data) {
 //		function callbackFunction(event) {
  
 
-const data = {
-		id: 1,
-		name: "Geeks",
-		profession: "developer"
-	}
+//const data = {
+//		id: 1,
+//		name: "Geeks",
+//		profession: "developer"
+//	}
 		
-//		event.preventDefault();
-//    const myFormData = new FormData(event.target);
-//    console.log(myFormData);
+		event.preventDefault();
+    const myFormData = new FormData(event.target);
+    console.log(myFormData);
 
-//     const data = Object.fromEntries(myFormData.entries());
+     const data = Object.fromEntries(myFormData.entries());
 	
 	const csvdata = csvmaker(data);
 	download(csvdata);
