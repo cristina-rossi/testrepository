@@ -65,24 +65,9 @@ console.log(data);
 
 	
 	for (let i = 0; i < headers.length; i++) {
-		const line = [ headers[i], values[i] ] ;
-		
+		const line = [ headers[i], values[i] ];		
 		csvRows.push(line.join(','));
 	}
-
-//console.log(headers);
-	
-	// As for making csv format, headers
-	// must be separated by comma and
-	// pushing it into array
-//	csvRows.push(headers.join(','));
-
-	// Pushing Object values into array
-	// with comma separation
-////	const values = Object.values(data).join(',');
-//	csvRows.push(values)
-
-//console.log(csvRows);
 	
 	// Returning the array joining with new line
 	return csvRows.join('\n')
