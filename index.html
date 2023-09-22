@@ -9,10 +9,7 @@
 </head>
 
 <body>
-
-	ABC
-
-	<form id="contact-form">
+<form id="contact-form">
     <div class="form-control">
         <label for="name">Full Name</label>
         <input id="name" name="name" type="text" />
@@ -28,9 +25,9 @@
     <button id="bbb" class="btn" type="submit">Send</button>
 </form>
 	
-	<script type="text/javascript">
+<script type="text/javascript">
 
-		const download = function (data) {
+	const download = function (data) {
 
 	// Creating a Blob for having a csv file format
 	// and passing the data with type
@@ -77,53 +74,21 @@ const csvmaker = function (data) {
 	return csvRows.join('\n')
 }
 
-	const callbackFunction = async function (event) {
-//		function callbackFunction(event) {
- 
-
-//const data = {
-//		id: 1,
-//		name: "Geeks",
-//		profession: "developer"
-//	}
+const callbackFunction = async function (event) {
 		
-		event.preventDefault();
-    const myFormData = new FormData(event.target);
-    console.log(myFormData);
-
-     const data = Object.fromEntries(myFormData.entries());
+	event.preventDefault();
+    	const myFormData = new FormData(event.target);
+     	const data = Object.fromEntries(myFormData.entries());
 	
 	const csvdata = csvmaker(data);
-	download(csvdata);
-
-			
+	download(csvdata);			
 }
 
-//const get = async function (event) {
-
-	// JavaScript object
-//	const data = {
-//		id: 1,
-//		name: "Geeks",
-//		profession: "developer"
-//	}
-//event.preventDefault();
-//	const myFormData = new FormData(event.target);
-   
-
-// Getting element by id and adding
-// eventlistener to listen everytime
-// button get pressed
 
 const form = document.getElementById('contact-form');
 form.addEventListener('submit', callbackFunction);
 	
-//const form = document.getElementById('bbb');
-//form.addEventListener('click', callbackFunction);
 		
-//const btn = document.getElementById('action');
-//btn.addEventListener('click', get);
-		</script>
+</script>
 </body>
-
 </html>
