@@ -60,21 +60,29 @@ console.log(data);
 	// Headers is basically a keys of an
 	// object which is id, name, and
 	// profession
-	const headers = Object.keys(data);
+	const headers = Object.keys(data);	
+	const values = Object.values(data);
 
-console.log(headers);
+	
+	for (let i = 0; i < headers.length; i++) {
+		const line = [ headers[i], values[i] ] ;
+		
+		csvRows.push(line.join(','));
+	}
+
+//console.log(headers);
 	
 	// As for making csv format, headers
 	// must be separated by comma and
 	// pushing it into array
-	csvRows.push(headers.join(','));
+//	csvRows.push(headers.join(','));
 
 	// Pushing Object values into array
 	// with comma separation
-	const values = Object.values(data).join(',');
-	csvRows.push(values)
+////	const values = Object.values(data).join(',');
+//	csvRows.push(values)
 
-console.log(csvRows);
+//console.log(csvRows);
 	
 	// Returning the array joining with new line
 	return csvRows.join('\n')
