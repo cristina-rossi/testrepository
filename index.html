@@ -10,9 +10,9 @@
 
 <body>
 	
-<div id="form1" class="tabcontent">
+<div id="INPUT_TAB_0" class="tabcontent">
 	
-<form id="contact-form">
+<form id="INPUT_FORM_0">
 	
     <div class="form-control">
         <label for="name">Full Name</label>
@@ -40,9 +40,9 @@
 </form>
 </div>
 	
-<div id="form2" class="tabcontent">
+<div id="INPUT_TAB_1" class="tabcontent">
 
-	<form id="contact-form2">
+	<form id="INPUT_FORM_1">
 	
     <div class="form-control">
         <label for="name2">Full Name</label>
@@ -55,8 +55,8 @@
 </div>
 
 	
-<button class="tablink" onclick="openTab('form1', this, 'red')" id="defaultOpen">London</button>
-<button class="tablink" onclick="openTab('form2', this, 'green')" id="notDefaultOpen">Paris</button>
+<button class="tablink" onclick="openTab('INPUT_TAB_0', this, 'red')" id="defaultOpen">London</button>
+<button class="tablink" onclick="openTab('INPUT_TAB_1', this, 'green')" id="notDefaultOpen">Paris</button>
 	
 <script type="text/javascript">
 	
@@ -141,7 +141,7 @@ const callbackFunction = async function (event) {
 }
 
 
-const form = document.getElementById('contact-form');
+const form = document.getElementById('INPUT_FORM_0');
 form.addEventListener('submit', callbackFunction);
 
 
