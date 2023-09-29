@@ -107,8 +107,8 @@
 				headers = Object.keys(data);	
 				values = Object.values(data);		
 				
-				for (i = 0; i < headers.length; i++) {
-					line = [ headers[i], values[i] ];		
+				for (j = 0; j < headers.length; j++) {
+					line = [ headers[j], values[j] ];		
 					csvRows.push(line.join(','));
 				}
 			}
