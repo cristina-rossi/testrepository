@@ -75,96 +75,72 @@
 	
 		
 	
-<script type="text/javascript">
+	<script type="text/javascript">
 	
-function openTab(tabName, elmnt, color) {
-  // Hide all elements with class="tabcontent" by default */
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Remove the background color of all tablinks/buttons
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-
-  // Show the specific tab content
-  document.getElementById(tabName).style.display = "block";
-
-  // Add the specific color to the button used to open the tab content
-  elmnt.style.backgroundColor = color;
-}
-
-
-	
-
-const download = function (data) {
-
-	// Creating a Blob for having a csv file format
-	// and passing the data with type
-	const blob = new Blob([data], { type: 'text/csv' });
-
-	// Creating an object for downloading url
-	const url = window.URL.createObjectURL(blob)
-
-	// Creating an anchor(a) tag of HTML
-	const a = document.createElement('a')
-
-	// Passing the blob downloading url
-	a.setAttribute('href', url)
-
-	// Setting the anchor tag attribute for downloading
-	// and passing the download file name
-	a.setAttribute('download', 'download.csv');
-
-	// Performing a download with click
-	a.click()
-}
-
-const csvmaker = function (data) {
-
-console.log(data);
-	
-	// Empty array for storing the values
-	csvRows = [];
-
-	// Headers is basically a keys of an
-	// object which is id, name, and
-	// profession
-	const headers = Object.keys(data);	
-	const values = Object.values(data);
-
-	
-	for (let i = 0; i < headers.length; i++) {
-		const line = [ headers[i], values[i] ];		
-		csvRows.push(line.join(','));
-	}
-	
-	// Returning the array joining with new line
-	return csvRows.join('\n')
-}
-
-const callbackFunction = async function (event) {
+		function openTab(selectedTabID) {
+			var i, allTabs, tablinks; // defines variables 
 		
-	event.preventDefault();
-    	const myFormData = new FormData(event.target);
-     	const data = Object.fromEntries(myFormData.entries());
-	
-	const csvdata = csvmaker(data);
-	download(csvdata);			
-}
-
-
-const form = document.getElementById('INPUT_FORM_0');
-form.addEventListener('submit', callbackFunction);
-
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();	
+		  	allTabs = document.getElementsByClassName("tabcontent"); // initialized allTabs variable
 		
-</script>
+		  	for (i = 0; i < allTabs; i++) {   // "closes" all the tabs
+		    		allTabs[i].style.display = "none";
+		  	}
+
+	//		tablinks = document.getElementsByClassName("tablink");
+	//		for (i = 0; i < tablinks.length; i++) {
+	//			tablinks[i].style.backgroundColor = "";
+	//		}
+
+			document.getElementById(selectedTabID).style.display = "block";  // opens selected tab
+			
+		}
+
+
+	
+
+		const download = function (data) {
+		
+			const blob = new Blob([data], { type: 'text/csv' });
+			const url = window.URL.createObjectURL(blob)
+			const a = document.createElement('a')
+			a.setAttribute('href', url)
+			a.setAttribute('download', 'download.csv');
+			a.click()
+		}
+		
+
+		const csvmaker = function (data) {
+			csvRows = [];
+		
+			const headers = Object.keys(data);	
+			const values = Object.values(data);		
+			
+			for (let i = 0; i < headers.length; i++) {
+				const line = [ headers[i], values[i] ];		
+				csvRows.push(line.join(','));
+			}
+			
+			return csvRows.join('\n')
+		}
+
+		const callbackFunction = async function (event) {
+				
+			event.preventDefault();
+		    	const myFormData = new FormData(event.target);
+		     	const data = Object.fromEntries(myFormData.entries());
+			
+			const csvdata = csvmaker(data);
+			download(csvdata);			
+		}
+
+
+		const form = document.getElementById('INPUT_FORM_0');
+		form.addEventListener('submit', callbackFunction);		
+		
+		document.getElementById("LINK_TAB_0").click();	
+		
+	</script>
+		
 </body>
+		
 </html>
