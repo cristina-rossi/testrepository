@@ -94,7 +94,7 @@
 		}
 
 		function downloadCsv(){
-			const myFormData = new FormData(INPUT_FORM_0);
+			const myFormData = new FormData(document.getElementById("INPUT_FORM_0"));
 		     	const data = Object.fromEntries(myFormData.entries());
 
 			csvRows = [];
