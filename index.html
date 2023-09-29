@@ -88,7 +88,7 @@
 		  	allTabs = document.getElementsByClassName("tabcontent"); // initialized allTabs variable
 			
 			console.log(allTabs);
-		  	for (i = 0; i < allTabs; i++) {   // "closes" all the tabs
+		  	for (i = 0; i < allTabs.length; i++) {   // "closes" all the tabs
 		    		allTabs[i].style.display = "none";
 		  	}
 
