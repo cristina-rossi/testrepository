@@ -126,13 +126,16 @@
 	
 		function openTab(selectedTabID,selectedTabLink) {
 			
-		  	allTabs = document.getElementsByClassName("tabcontent"); // initialized allTabs variable
-			
+		  	allTabs = document.getElementsByClassName("tabcontent"); // initialized allTabs variable			
 		  	for (i = 0; i < allTabs.length; i++) {   // "closes" all the tabs
 		    		allTabs[i].style.display = "none";
 		  	}
-
 			document.getElementById(selectedTabID).style.display = "block";  // opens selected tab
+
+		  	allTabLinks = document.getElementsByClassName("tablink");  			
+		  	for (i = 0; i < allTabLinks.length; i++) {   // resets tab link colors
+		    		allTabLinks[i].style.backgroundColor = 'Azure';
+		  	}			
 			selectedTabLink.style.backgroundColor = 'LightBlue';
 			
 		}
