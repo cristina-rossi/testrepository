@@ -67,10 +67,10 @@
 		Download
     	</button>
 	
-	<button class="tablink" onclick="openTab('INPUT_TAB_0', this, 'red')" id="LINK_TAB_0">      <!-- Menu to open tabs  >
+	<button class="tablink" onclick="openTab('INPUT_TAB_0')" id="LINK_TAB_0">      <!-- Menu to open tabs  >
 		Open Tab 0
 	</button>
-	<button class="tablink" onclick="openTab('INPUT_TAB_1', this, 'green')" id="LINK_TAB_1">
+	<button class="tablink" onclick="openTab('INPUT_TAB_1')" id="LINK_TAB_1">
 		Open Tab 1
 	</button>
 		
@@ -78,6 +78,7 @@
 	<script type="text/javascript">
 	
 		function openTab(selectedTabID) {
+		console.log("open tab script");
 			var i, allTabs, tablinks; // defines variables 
 		
 		  	allTabs = document.getElementsByClassName("tabcontent"); // initialized allTabs variable
