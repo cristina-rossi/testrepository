@@ -54,10 +54,10 @@
 <body>
 	
 	<div class="tab">
-		<button id="LINK_TAB_0" class="tablink" onclick="openTab('INPUT_TAB_0')">      <!-- Menu to open tabs  -->
+		<button id="LINK_TAB_0" class="tablink" onclick="openTab('INPUT_TAB_0',this)">      <!-- Menu to open tabs  -->
 			Open Tab 0
 		</button>
-		<button id="LINK_TAB_1" class="tablink" onclick="openTab('INPUT_TAB_1')">
+		<button id="LINK_TAB_1" class="tablink" onclick="openTab('INPUT_TAB_1',this)">
 			Open Tab 1
 		</button>
 	</div>
@@ -124,7 +124,7 @@
 	
 	<script type="text/javascript">
 	
-		function openTab(selectedTabID) {
+		function openTab(selectedTabID,selectedTabLink) {
 			
 		  	allTabs = document.getElementsByClassName("tabcontent"); // initialized allTabs variable
 			
@@ -132,7 +132,8 @@
 		    		allTabs[i].style.display = "none";
 		  	}
 
-			document.getElementById(selectedTabID).style.display = "block";  // opens selected tab	
+			document.getElementById(selectedTabID).style.display = "block";  // opens selected tab
+			selectedTabLink.style.backgroundColor = 'LightBlue';
 			
 		}
 
