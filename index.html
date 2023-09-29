@@ -80,7 +80,10 @@
 	<script type="text/javascript">
 	
 		function openTab(selectedTabID) {
-		console.log("open tab script");
+			console.log("open tab script");
+			console.log(selectedTabID);			
+			console.log("open tab script END");
+			
 			var i, allTabs, tablinks; // defines variables 
 		
 		  	allTabs = document.getElementsByClassName("tabcontent"); // initialized allTabs variable
@@ -103,6 +106,7 @@
 
 		const download = function (data) {
 		
+			console.log("download script");
 			const blob = new Blob([data], { type: 'text/csv' });
 			const url = window.URL.createObjectURL(blob)
 			const a = document.createElement('a')
