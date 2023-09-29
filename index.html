@@ -82,8 +82,6 @@
 	
 		function openTab(selectedTabID) {
 			
-			var i, allTabs; // defines variables 
-		
 		  	allTabs = document.getElementsByClassName("tabcontent"); // initialized allTabs variable
 			
 		  	for (i = 0; i < allTabs.length; i++) {   // "closes" all the tabs
@@ -100,26 +98,26 @@
 			csvRows = [];
 		  	allFormPages = document.forms;
 			for (i = 0; i < allFormPages.length; i++) { 
-				const myFormData = new FormData(allFormPages[i]);
+				myFormData = new FormData(allFormPages[i]);
 
 			
-			     	const data = Object.fromEntries(myFormData.entries());
+			     	data = Object.fromEntries(myFormData.entries());
 	
 			
-				const headers = Object.keys(data);	
-				const values = Object.values(data);		
+				headers = Object.keys(data);	
+				values = Object.values(data);		
 				
-				for (let i = 0; i < headers.length; i++) {
-					const line = [ headers[i], values[i] ];		
+				for (i = 0; i < headers.length; i++) {
+					line = [ headers[i], values[i] ];		
 					csvRows.push(line.join(','));
 				}
 			}
 			
 			
-			const csvdata = csvRows.join('\n');
-			const blob = new Blob([csvdata], { type: 'text/csv' });
-			const url = window.URL.createObjectURL(blob)
-			const a = document.createElement('a')
+			csvdata = csvRows.join('\n');
+			blob = new Blob([csvdata], { type: 'text/csv' });
+			url = window.URL.createObjectURL(blob)
+			a = document.createElement('a')
 			a.setAttribute('href', url)
 			a.setAttribute('download', 'download.csv');
 			a.click()	
