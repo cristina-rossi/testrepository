@@ -101,19 +101,18 @@
 		  	allFormPages = document.forms;
 			for (i = 0; i < allFormPages.length; i++) { 
 				const myFormData = new FormData(allFormPages[i]);
-			//const myFormData = new FormData(document.getElementById("INPUT_FORM_0"));
 
 			
-		     	const data = Object.fromEntries(myFormData.entries());
-
-		
-			const headers = Object.keys(data);	
-			const values = Object.values(data);		
+			     	const data = Object.fromEntries(myFormData.entries());
+	
 			
-			for (let i = 0; i < headers.length; i++) {
-				const line = [ headers[i], values[i] ];		
-				csvRows.push(line.join(','));
-			}
+				const headers = Object.keys(data);	
+				const values = Object.values(data);		
+				
+				for (let i = 0; i < headers.length; i++) {
+					const line = [ headers[i], values[i] ];		
+					csvRows.push(line.join(','));
+				}
 			}
 			
 			
