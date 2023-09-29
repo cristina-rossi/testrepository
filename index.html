@@ -14,22 +14,27 @@
 	
 		<form id="INPUT_FORM_0">
 			
-		    <div class="form-control">
-		        <label for="name">Full Name</label>
-		        <input id="name" name="naameCSV" type="text" value="Cris" />
+		    <div class="form-control">        <!-- strings  >
+		        <label for="STRING_0">Insert A String:</label>
+		        <input id="STRING_0" name="csvString" type="text" value="ciao some string" />
 		    </div>
 		
-		    <div class="form-control">
-		        <label for="email">A Number</label>
-		        <input id="email" name="email" type="number" value="-4.56" />
+		    <div class="form-control">        <!-- numbers  >
+		        <label for="NUMBER_0">Insert A Number:</label>
+		        <input id="NUMBER_0" name="csvNumber" type="number" value="-4.56" />
 		    </div>
 		
-		    <div class="form-control">
-		        <label for="message">Enter a Message</label>
-		        <textarea id="message" name="message" rows="6" cols="65"></textarea>
+		    <div class="form-control">        <!-- longer strings???  >
+		        <label for="LONGTEXT_0">Enter a Message</label>
+		        <textarea id="LONGTEXT_0" name="csvLongText" rows="6" cols="65"></textarea>
+		    </div>
+		
+		    <div class="form-control">        <!-- logical  >
+			<label for="LOGICAL_0">Check the logical box:</label>
+			<input id="LOGICAL_0" name="csvLogical" type="checkbox" checked>
 		    </div>
 
-		    <div class="form-control">
+		    <div class="form-control">        <!-- multiple choice, radio buttons  >
 			Language Choice:
 			<input type="radio" id="html" name="fav_language" value="HTML">
 			<label for="html">HTML</label>
