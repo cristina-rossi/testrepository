@@ -11,6 +11,13 @@
 <body>
 	
 
+	<button class="tablink" onclick="openTab('INPUT_TAB_0')" id="LINK_TAB_0">      <!-- Menu to open tabs  -->
+		Open Tab 0
+	</button>
+	<button class="tablink" onclick="openTab('INPUT_TAB_1')" id="LINK_TAB_1">
+		Open Tab 1
+	</button>
+	<br><br>
 	
 	<div id="INPUT_TAB_0" class="tabcontent">     <!-- TAB 0:  -->
 	
@@ -38,12 +45,12 @@
 
 		    <div class="form-control">        <!-- multiple choice, radio buttons  -->
 			Language Choice:
-			<label for="MULTIPLECHOICE_0_A">Choice A</label>
 			<input id="MULTIPLECHOICE_0_A" name="csvMultiplechoice0" type="radio" value="selectedA">
-			<label for="MULTIPLECHOICE_0_B">Choice B</label>
+			<label for="MULTIPLECHOICE_0_A">Choice A</label> &emsp
 			<input id="MULTIPLECHOICE_0_B" name="csvMultiplechoice0" type="radio" value="selectedB"  checked>
-			<label for="MULTIPLECHOICE_0_C">Choice C</label>
+			<label for="MULTIPLECHOICE_0_B">Choice B</label> &emsp
 			<input id="MULTIPLECHOICE_0_C" name="csvMultiplechoice0" type="radio" value="selectedC">
+			<label for="MULTIPLECHOICE_0_C">Choice C</label>
 		    </div>		
 		
 		</form>
@@ -62,17 +69,12 @@
 	</div>
 
 
+	<br><br>
 		
 	<button id="SUBMITBUTTON_0" class="btn" type="submit">     <!-- GENERAL DOWNLOAD BUTTON:  -->
 		Download
     	</button>
 	
-	<button class="tablink" onclick="openTab('INPUT_TAB_0')" id="LINK_TAB_0">      <!-- Menu to open tabs  -->
-		Open Tab 0
-	</button>
-	<button class="tablink" onclick="openTab('INPUT_TAB_1')" id="LINK_TAB_1">
-		Open Tab 1
-	</button>
 		
 	
 	<script type="text/javascript">
