@@ -46,11 +46,11 @@
 		    <div class="form-control">        <!-- multiple choice, radio buttons  -->
 			Language Choice:
 			<input id="MULTIPLECHOICE_0_A" name="csvMultiplechoice0" type="radio" value="selectedA">
-			<label for="MULTIPLECHOICE_0_A">Choice A</label> &emsp
+			<label for="MULTIPLECHOICE_0_A">Choice A   </label> 
 			<input id="MULTIPLECHOICE_0_B" name="csvMultiplechoice0" type="radio" value="selectedB"  checked>
-			<label for="MULTIPLECHOICE_0_B">Choice B</label> &emsp
+			<label for="MULTIPLECHOICE_0_B">Choice B   </label> 
 			<input id="MULTIPLECHOICE_0_C" name="csvMultiplechoice0" type="radio" value="selectedC">
-			<label for="MULTIPLECHOICE_0_C">Choice C</label>
+			<label for="MULTIPLECHOICE_0_C">Choice C   </label>
 		    </div>		
 		
 		</form>
@@ -81,13 +81,13 @@
 	
 		function openTab(selectedTabID) {
 			console.log("open tab script");
-			console.log(selectedTabID);			
-			console.log("open tab script END");
+			console.log(selectedTabID);		
 			
 			var i, allTabs, tablinks; // defines variables 
 		
 		  	allTabs = document.getElementsByClassName("tabcontent"); // initialized allTabs variable
-		
+			
+			console.log(allTabs);
 		  	for (i = 0; i < allTabs; i++) {   // "closes" all the tabs
 		    		allTabs[i].style.display = "none";
 		  	}
@@ -97,12 +97,13 @@
 	//			tablinks[i].style.backgroundColor = "";
 	//		}
 
-			document.getElementById(selectedTabID).style.display = "block";  // opens selected tab
+			document.getElementById(selectedTabID).style.display = "block";  // opens selected tab	
+			console.log("open tab script END");
 			
 		}
 
 
-	
+	/*
 
 		const download = function (data) {
 		
@@ -140,9 +141,9 @@
 			download(csvdata);			
 		}
 
-
-		const form = document.getElementById('INPUT_FORM_0');
-		form.addEventListener('submit', callbackFunction);		
+*/
+	//	const form = document.getElementById('INPUT_FORM_0');
+	//	form.addEventListener('submit', callbackFunction);		
 		
 		document.getElementById("LINK_TAB_0").click();	
 		
