@@ -16,13 +16,18 @@
 			font-size: 15px;
 		} 
 		
+		/* Style of the overall container for the tabs and buttons   */
+		.overallcontainer{			
+		  margin: auto;
+	          width: 95%;		
+    		  text-align: center;
+		}
+		
 		/* Style the tab (top row with buttons) */
 		.tab {
 		  overflow: hidden;
 		  border: 1px solid #ccc;
 		  background-color: #f1f1f1;
-		  margin: auto;
-	          width: 100%;
 		}
 		
 		/* Style the buttons inside the tab (buttons to toggle windows) */
@@ -48,8 +53,6 @@
 		  font-family: Arial;
 		  font-size: 15px; /* this is the font size for the non-input text within the form tabs */ 
 		  line-height: 3;
-		  margin: auto;
-	          width: 95%;
 		}
 		
 		/* Style for form inputs - text inputed by users in stirng or number places (not text areas) */
@@ -64,11 +67,6 @@
 			font-size: 15px;
 		} 
 
-		/* Style of the container for the "download" button underneath tabs (to place button at the center) */
-		.buttoncontainer{			
-		  margin: auto;
-	          width: 95%;
-		}
 
 		/* Style of the "download" button underneath tabs */
 		.btn{			
@@ -76,7 +74,6 @@
 		  font-family: Arial;
 		  font-size: 20px;
   		  font-weight: bold;
-		  margin: auto;
 		}
 		
 	</style>
@@ -84,7 +81,7 @@
 </head> 
 
 <body>
-	
+	<div class="overallcontainer">
 	<div class="tab">
 		<button id="LINK_TAB_0" class="tablink" onclick="openTab('INPUT_TAB_0',this)">      <!-- Menu to open tabs  -->
 			Open Tab 0
@@ -159,10 +156,9 @@
 
 	<br><br>
 		
-	<div class="buttoncontainer">   
-		<button id="SUBMITBUTTON_0" class="btn" onclick="downloadCsv()">     <!-- GENERAL DOWNLOAD BUTTON:  -->
-			Download
-	    	</button>
+	<button id="SUBMITBUTTON_0" class="btn" onclick="downloadCsv()">     <!-- GENERAL DOWNLOAD BUTTON:  -->
+		Download
+	</button>
 	</div>
 	
 		
