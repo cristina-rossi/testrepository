@@ -9,19 +9,20 @@
 
 
 	<style>
-		body {
+	/*	body {
 			font-family: Arial;
 			font-size: 25px;
-		}
+		} 
+		doesnt do anything because nothing in main body - ie outside of buttons, tabs, inputs, tabcontents etc... */
 		
-		/* Style the tab */
+		/* Style the tab (top row with buttons) */
 		.tab {
 		  overflow: hidden;
 		  border: 1px solid #ccc;
 		  background-color: #f1f1f1;
 		}
 		
-		/* Style the buttons inside the tab */
+		/* Style the buttons inside the tab (buttons to toggle windows) */
 		.tab button {
 		  background-color: inherit;
 		  float: left;
@@ -30,7 +31,7 @@
 		  cursor: pointer;
 		  padding: 14px 16px;
 		  transition: 0.3s;
-		  font-size: 2px;
+		  font-size: 15px; /* this is the font size for the tob buttons to toggle between tabs */ 
 		}
 		
 				
@@ -43,11 +44,12 @@
 		  font-size: 15px; /* this is the font size for the non-input text within the form tabs */ 
 		  line-height: 3;
 		}
-		input[type='text'] { font-size: 2px; }
-		/*input  { font-size: 24px; }*/
-	/*	.button{
+	/*	input[type='text'] { font-size: 2px; } */ /* this changes font size for user inputs of type text (strings) */
+		input  { font-size: 2px; }
+		.btn{
 		  font-size: 2px;
 		}
+		/*
 		.textarea{
 			font-size: 2px;
 		} 
