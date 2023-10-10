@@ -14,8 +14,6 @@
 		body {
 			font-family: Arial;
 			font-size: 15px;
-		  margin: auto;
-	          width: 95%;
 		} 
 		
 		/* Style the tab (top row with buttons) */
@@ -65,6 +63,12 @@
 		  	font-family: Arial;
 			font-size: 15px;
 		} 
+
+		/* Style of the container for the "download" button underneath tabs (to place button at the center) */
+		.btncontainer{			
+		  margin: auto;
+	          width: 95%;
+		}
 
 		/* Style of the "download" button underneath tabs */
 		.btn{			
@@ -155,9 +159,11 @@
 
 	<br><br>
 		
-	<button id="SUBMITBUTTON_0" class="btn" onclick="downloadCsv()">     <!-- GENERAL DOWNLOAD BUTTON:  -->
-		Download
-    	</button>
+	<div class="buttoncontainer">   
+		<button id="SUBMITBUTTON_0" class="btn" onclick="downloadCsv()">     <!-- GENERAL DOWNLOAD BUTTON:  -->
+			Download
+	    	</button>
+	</div>
 	
 		
 	
