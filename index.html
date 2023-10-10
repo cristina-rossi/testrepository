@@ -35,7 +35,7 @@
 		}
 		
 				
-		/* Style the tab content */
+		/* Style the tab content - outside of the user inputs */
 		.tabcontent {
 		  display: none;
 		  padding: 6px 12px;
@@ -44,16 +44,20 @@
 		  font-size: 15px; /* this is the font size for the non-input text within the form tabs */ 
 		  line-height: 3;
 		}
-	/*	input[type='text'] { font-size: 2px; } */ /* this changes font size for user inputs of type text (strings) */
-		input  { font-size: 2px; }
-		.btn{
-		  font-size: 2px;
+		
+		/* Style for form inputs - text inputed by users in stirng or number places (not text areas) */
+		input  { 
+			font-size: 15px; 
 		}
-		/*
-		.textarea{
+		
+		textarea{
 			font-size: 2px;
 		} 
-		doesnt seem to do anything */ 
+
+		/* Style of the "download" button underneath tabs */
+		.btn{
+		  font-size: 15px;
+		}
 		
 	</style>
 	
@@ -69,7 +73,7 @@
 			Open Tab 1
 		</button>
 	</div>
-	<br><br>
+	<!-- <br><br> -->
 	
 	<div id="INPUT_TAB_0" class="tabcontent">     <!-- TAB 0:  -->
 	
