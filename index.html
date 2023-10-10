@@ -37,7 +37,7 @@
 		  border: none;
 		  outline: none;
 		  cursor: default;
-		  padding: 40px 16px;
+		  padding: 10px 40px;
 		  transition: 0.3s; /* between tabs */
 		  font-family: Arial;
 		  font-size: 12px;  
@@ -113,23 +113,23 @@
 
 	<!-- OVERALL TOP NAVIGATION MENU -->
 	<div class="parenttab">
-		<button id="LINK_PAGE_HOME" class="tablink" onclick="openPage('HOME_PAGE',this)">
+		<button id="LINK_PAGE_HOME" class="pagelink" onclick="openPage('HOME_PAGE',this)">
 			Home
 		</button>
-		<button id="LINK_PAGE_INPUT" class="tablink" onclick="openPage('INPUT_PAGE',this)">   
+		<button id="LINK_PAGE_INPUT" class="pagelink" onclick="openPage('INPUT_PAGE',this)">   
 			Create Input Files
 		</button>
 	</div>
 
 	
 	<!-- HOME PAGE -->
-	<div class="pagecontainer">
+	<div id="HOME_PAGE" class="pagecontainer">
 		Welcome to VR Motor Learning 
 	</div>
 	
 
 	<!-- PAGE FOR INPUT FILES CREATION -->
-	<div class="pagecontainer">
+	<div id="INPUT_PAGE" class="pagecontainer">
 	<div class="tab">
 		<button id="LINK_TAB_0" class="tablink" onclick="openTab('INPUT_TAB_0',this)">      <!-- Menu to open tabs  -->
 			Open Tab 0
@@ -214,6 +214,22 @@
 		
 	
 	<script type="text/javascript">
+	
+		function openPage(selectedPageID,selectedPageLink) {
+			
+		  	allPages = document.getElementsByClassName("pagecontainer"); // initialized allPages variable			
+		  	for (i = 0; i < allPages.length; i++) {   // "closes" all the pages
+		    		allPages[i].style.display = "none";
+		  	}
+			document.getElementById(selectedPageID).style.display = "block";  // opens selected tab
+
+		  	allPageLinks = document.getElementsByClassName("pagelink");  			
+		  	for (i = 0; i < allPageLinks.length; i++) {   // resets page links font weight
+		    		allPageLinks[i].style.fontWeight = "normal";
+		  	}			
+			selectedPageLink.style.fontWeight = "bolder";
+			
+		}
 	
 		function openTab(selectedTabID,selectedTabLink) {
 			
