@@ -31,8 +31,9 @@
                     fileDisplayArea.innerText = reader.result;
                 }
 
-                buffer = reader.readAsArrayBuffer(file);
+                var buffer = reader.readAsArrayBuffer(file);
 
+            console.log(buffer);
 var dv = new DataView(buffer);
 var vector_length = dv.getUint8(0);
 var width = dv.getUint16(1); // 0+uint8 = 1 bytes offset
@@ -54,7 +55,7 @@ for (var i=0, off=5; i<vectors.length; i++, off+=4) {
 
 <body>
     <input type="file" id="FileReader" onchange="OnFileLoad()" />
-    <div id="FileContent">Your content will appear here D</div>
+    <div id="FileContent">Your content will appear here E</div>
 </body>
 
 </html>
