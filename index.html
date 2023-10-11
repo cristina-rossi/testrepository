@@ -33,6 +33,7 @@
 
                 var buffer = reader.readAsArrayBuffer(file);
 
+            console.log(reader);
             console.log(buffer);
 var dv = new DataView(buffer);
 var vector_length = dv.getUint8(0);
