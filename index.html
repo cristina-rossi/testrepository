@@ -30,6 +30,8 @@ async function OnFileLoad() {
     reader.readAsArrayBuffer(file);
   });
     console.log(arrayBuffer);
+    var view = new  Float32Array(buffer);
+    console.log(view);
   return arrayBuffer;
 }
         
@@ -69,7 +71,7 @@ for (var i=0, off=5; i<vectors.length; i++, off+=4) {
 
 <body>
     <input type="file" id="FileReader" onchange="OnFileLoad()" />
-    <div id="FileContent">Your content will appear here F</div>
+    <div id="FileContent">Your content will appear here G</div>
 </body>
 
 </html>
