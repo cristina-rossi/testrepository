@@ -31,8 +31,10 @@
                     fileDisplayArea.innerText = reader.result;
                 }
 
-                reader.readAsBinaryString(file);
-            
+                buffer = reader.readAsArrayBuffer(file);
+                view = new  Float32Array(buffer);
+            console.log("OK");
+            console.log(view);
         }
     </script>
 </head>
