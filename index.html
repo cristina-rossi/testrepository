@@ -3,7 +3,8 @@
 
 <head>
     <script>
-        function OnFileLoad() {
+        
+        function OnFileLoadORIG() {
             var file = document.getElementById("FileReader").files[0];
             var textType = /text.*/;
             var fileDisplayArea = document.getElementById("FileContent");
@@ -18,6 +19,20 @@
             } else {
                 fileDisplayArea.innerText = "File not supported!"
             }
+        }
+        function OnFileLoad() {
+            var file = document.getElementById("FileReader").files[0];
+            var textType = /text.*/;
+            var fileDisplayArea = document.getElementById("FileContent");
+           
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    fileDisplayArea.innerText = reader.result;
+                }
+
+                reader.readAsText(file);
+            
         }
     </script>
 </head>
