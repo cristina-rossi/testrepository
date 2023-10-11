@@ -31,7 +31,7 @@
                     fileDisplayArea.innerText = reader.result;
                 }
 
-                reader.readAsArrayBuffer(file);
+                reader.readAsBinaryString(file);
             
         }
     </script>
@@ -39,7 +39,7 @@
 
 <body>
     <input type="file" id="FileReader" onchange="OnFileLoad()" />
-    <div id="FileContent">Your content will appear here A</div>
+    <div id="FileContent">Your content will appear here B</div>
 </body>
 
 </html>
