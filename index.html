@@ -20,7 +20,20 @@
                 fileDisplayArea.innerText = "File not supported!"
             }
         }
-        function OnFileLoad() {
+
+
+async function OnFileLoad() {
+          var file = document.getElementById("FileReader").files[0];
+  const arrayBuffer = await new Promise(resolve => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.readAsArrayBuffer(file);
+  });
+    console.log(arrayBuffer);
+  return arrayBuffer;
+}
+        
+        function OnFileLoadXX() {
             var file = document.getElementById("FileReader").files[0];
             var textType = /text.*/;
             var fileDisplayArea = document.getElementById("FileContent");
@@ -56,7 +69,7 @@ for (var i=0, off=5; i<vectors.length; i++, off+=4) {
 
 <body>
     <input type="file" id="FileReader" onchange="OnFileLoad()" />
-    <div id="FileContent">Your content will appear here E</div>
+    <div id="FileContent">Your content will appear here F</div>
 </body>
 
 </html>
