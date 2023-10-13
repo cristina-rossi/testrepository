@@ -42,7 +42,18 @@
 
 
     function loadfiles(files) {
-
+	function loadsingle(file) {
+	    reader = new FileReader();
+	    reader.readAsArrayBuffer(file);
+	    reader.onload = function() {
+	
+			arrayBuffer = reader.result;
+			floatarray = new  Float32Array(arrayBuffer);
+			console.log(floatarray);
+			processdata(floatarray);   
+	    
+	    };
+    	}
     function setup_reader(file) {
         var name = file.name;
         var reader = new FileReader();
@@ -58,7 +69,7 @@
 			processdata(floatarray);   
     }
 
-    for (var i = 0; i < files.length; i++) { setup_reader(files[i]); }
+    for (var i = 0; i <fileinput.files.length; i++) { loadsingle(fileinput.files[i]); }
 }
 
 	    
@@ -68,7 +79,7 @@
 </head>
 
 <body>
-<p> hellof </p>
+<p> helloj </p>
     <input multiple type="file" id="FILE_INPUT" onchange="loadfile(this)" />
 </body>
 
