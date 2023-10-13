@@ -97,9 +97,9 @@ const upload = async (event) => {
 	console.log(res);
 	for (i=0;i<res.length;i++){
 		console.log(i);
-		floatarray = new  Float32Array(arrayBuffer);
+		floatarray = new  Float32Array(res[i]);
 		console.log(floatarray);
-		console.log( new  Float32Array(arrayBuffer));
+		console.log( new  Float32Array(res[i]));
 	}
   
 }
@@ -110,7 +110,7 @@ const upload = async (event) => {
 </head>
 
 <body>
-<p> af </p>
+<p> aff </p>
     <input multiple type="file" id="FILE_INPUT" onchange="loadfile2(this)" />
 
 	
