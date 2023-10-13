@@ -54,6 +54,9 @@ const upload = async (event) => {
 
 <body>
 <p> aff </p>	
+  <label for="LOAD_FILES" class="btn">Select .bin files</label>
+  <input id="LOAD_FILES" style="visibility:hidden;" type="file" onchange = 'upload(event)' multiple/>
+	
 	<input onchange = 'upload(event)' type = 'file' multiple/>
 
 	
