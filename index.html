@@ -20,7 +20,7 @@
     function loadfile(fileinput) {
 	    file = fileinput.files[0];
 	    reader = new FileReader();
-	    reader.readAsText(file);
+	    reader.readAsArrayBuffer(file);
 
 	    reader.onload = function() {
 	    	arrayBuffer = reader.result;
