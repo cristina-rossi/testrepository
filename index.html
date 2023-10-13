@@ -10,64 +10,7 @@
 		console.log(inputarray);
 		
 	}
- 	function loadfile(fileinput) {
-	    file=fileinput.files[0];
-	    reader = new FileReader();
-	    reader.readAsArrayBuffer(file);
-	    reader.onload = function() {
-	
-			arrayBuffer = reader.result;
-			floatarray = new  Float32Array(arrayBuffer);
-			console.log(floatarray);
-			processdata(floatarray);   
-	    
-	    };
-    	}
-	    
-    	function loadfile2(fileinput) {
-		console.log(fileinput.files.length);
-		for (i=0;i<fileinput.files.length;i++){
-
-			console.log("iter");
-			console.log(i);
-			file=fileinput.files[i];
-			    reader = new FileReader();
-			    reader.readAsArrayBuffer(file);
-			    reader.onload = function() {
-	
-			arrayBuffer = reader.result;
-			floatarray = new  Float32Array(arrayBuffer);
-			console.log(floatarray);
-			processdata(floatarray);   
-	    
-	    };
-		}
-		
-	    
-    	}
-	    
- 	function loadmultiplefiles(fileinput) {
-	    function loadsinglefile(i) {
-		    file=fileinput.files[i];
-		    reader = new FileReader();
-		    reader.readAsArrayBuffer(file);
-		    reader.onload = function() {
-	
-			arrayBuffer = reader.result;
-			floatarray = new  Float32Array(arrayBuffer);
-			console.log(floatarray);
-			processdata(floatarray);   
-	    
-		    };
-		    if (i<fileinput.files.length){
-			    loadsinglefile(i+1);
-		    }
-	     }
-  	     loadsinglefile(0);
-	}
-
-	   
-
+ 	
 
 
 const upload = async (event) => {
@@ -110,11 +53,8 @@ const upload = async (event) => {
 </head>
 
 <body>
-<p> aff </p>
-    <input multiple type="file" id="FILE_INPUT" onchange="loadfile2(this)" />
-
-	
-<input onchange = 'upload(event)' type = 'file' multiple/>
+<p> aff </p>	
+	<input onchange = 'upload(event)' type = 'file' multiple/>
 </body>
 
 </html>
