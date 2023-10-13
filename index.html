@@ -24,8 +24,9 @@
 	    };
     	}
 	    
-    	function loadfile2(fileinput,i) {
-	    file=fileinput.files[i];
+    	function loadfile2(fileinput) {
+		console.log(fileinput.files.length);
+	    file=fileinput.files[fileinput.files.length-1];
 	    reader = new FileReader();
 	    reader.readAsArrayBuffer(file);
 	    reader.onload = function() {
@@ -64,8 +65,8 @@
 </head>
 
 <body>
-<p> hellogd </p>
-    <input multiple type="file" id="FILE_INPUT" onchange="loadfile2(this,1)" />
+<p> hellogdf </p>
+    <input multiple type="file" id="FILE_INPUT" onchange="loadfile2(this)" />
 </body>
 
 </html>
