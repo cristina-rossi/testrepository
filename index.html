@@ -12,12 +12,12 @@
 	}
 
     	function loadfile(fileinput) {
+	    reader = new FileReader();
 	    reader.onload = function() {
 	    	for (i=0; i<fileinput.files.length; i++){
 			    
 		 
 		    	file = fileinput.files[i];
-		    	reader = new FileReader();
 		    	reader.readAsArrayBuffer(file);
 	
 			arrayBuffer = reader.result;
