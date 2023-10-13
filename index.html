@@ -85,7 +85,7 @@ const upload = async (event) => {
             reader.onload = () => resolve(reader.result);
 
             // Read the file as a text
-            reader.readAsText(file);
+            reader.readAsArrayBuffer(file);
 
         });
 
@@ -95,6 +95,12 @@ const upload = async (event) => {
     let res = await Promise.all(files);
 	console.log("here");
 	console.log(res);
+	for (i=0;i<res.length;i++){
+		console.log(i);
+		floatarray = new  Float32Array(arrayBuffer);
+		console.log(floatarray);
+		console.log( new  Float32Array(arrayBuffer));
+	}
   
 }
     
