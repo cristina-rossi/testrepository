@@ -53,19 +53,19 @@ const upload = async (event) => {
 </head>
 
 <body>
-<p> aff </p>	 
-	<button style="display:block;width:120px; height:30px;" onclick="document.getElementById('LOAD_FILES').click()">Load .bin files</button>
+<p> Load .bin files:
+</p>	 
+	<button style="display:block;width:120px; height:30px;" onclick="document.getElementById('LOAD_FILES').click()">Load files</button>
    	<input id="LOAD_FILES" style="visibility:hidden;" type="file" onchange = 'upload(event)' multiple/>
 
-	<span>   OR     </span>
+	<p>   OR     </p>
 	
-	<button style="display:block;width:120px; height:30px;" onclick="document.getElementById('LOAD_FOLDER').click()">Load all .bin files in folder</button>
+	<button style="display:block;width:120px; height:30px;" onclick="document.getElementById('LOAD_FOLDER').click()">Load folder</button>
    	<input id="LOAD_FOLDER" style="visibility:hidden;"  type="file" webkitdirectory directory  onchange = 'upload(event)' multiple/>
 	
 	 
 
 	
-<input type="file" id="ctrl" webkitdirectory directory multiple/>
 </body>
 
 </html>
