@@ -10,8 +10,20 @@
 		console.log(inputarray);
 		
 	}
-
-    	function loadfilea(fileinput) {
+ 	function loadfile(fileinput) {
+		file=fileinput.files[0];
+	    reader = new FileReader();
+	    reader.onload = function() {
+		    	reader.readAsArrayBuffer(file);
+	
+			arrayBuffer = reader.result;
+			floatarray = new  Float32Array(arrayBuffer);
+			console.log(floatarray);
+			processdata(floatarray);   
+	    
+	    };
+    	}
+    	function loadfilex(fileinput) {
 	    reader = new FileReader();
 	    reader.onload = function() {
 	    	for (i=0; i<fileinput.files.length; i++){
@@ -29,7 +41,7 @@
     	}
 
 
-    function loadfile(files) {
+    function loadfiles(files) {
 
     function setup_reader(file) {
         var name = file.name;
