@@ -16,13 +16,24 @@
 	    console.log(view);
 	    return arrayBuffer;
     }
+
+    function loadfile(fileinput) {
+	    file = fileinput.files[0];
+	    reader = new FileReader();
+	    reader.onload = () => resolve(reader.result);
+	    arrayBuffer=reader.readAsArrayBuffer(file);	  
+	    console.log(arrayBuffer);
+	    var view = new  Float32Array(arrayBuffer);
+	    console.log(view);
+    }
             
        
     </script>
 </head>
 
 <body>
-    <input type="file" id="FileReader" onchange="OnFileLoad()" />
+    <input type="file" id="FILE_INPUT" onchange="OnFileLoad()" />
+    <input type="file" id="FILE_INPUT2" onchange="loadfile(this)" />
 </body>
 
 </html>
