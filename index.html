@@ -11,10 +11,10 @@
 		
 	}
  	function loadfile(fileinput) {
-		file=fileinput.files[0];
+	    file=fileinput.files[0];
 	    reader = new FileReader();
+	    reader.readAsArrayBuffer(file);
 	    reader.onload = function() {
-		    	reader.readAsArrayBuffer(file);
 	
 			arrayBuffer = reader.result;
 			floatarray = new  Float32Array(arrayBuffer);
@@ -68,7 +68,7 @@
 </head>
 
 <body>
-<p> hellod </p>
+<p> hellof </p>
     <input multiple type="file" id="FILE_INPUT" onchange="loadfile(this)" />
 </body>
 
