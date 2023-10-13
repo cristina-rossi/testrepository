@@ -23,6 +23,26 @@
 	    
 	    };
     	}
+	    
+ 	function loadmultiplefiles(fileinput) {
+	    function loadsinglefile(i) {
+		    file=fileinput.files[i];
+		    reader = new FileReader();
+		    reader.readAsArrayBuffer(file);
+		    reader.onload = function() {
+	
+			arrayBuffer = reader.result;
+			floatarray = new  Float32Array(arrayBuffer);
+			console.log(floatarray);
+			processdata(floatarray);   
+	    
+		    };
+		    if (i<fileinput.files.length){
+			    loadsinglefile(i+1);
+		    }
+	     }
+  	     loadsinglefile(0);
+	}
     
 
        
@@ -30,8 +50,8 @@
 </head>
 
 <body>
-<p> helloaa </p>
-    <input multiple type="file" id="FILE_INPUT" onchange="loadfile(this)" />
+<p> helloe </p>
+    <input multiple type="file" id="FILE_INPUT" onchange="loadmultiplefiles(this)" />
 </body>
 
 </html>
