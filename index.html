@@ -13,18 +13,18 @@
 
     	function loadfile(fileinput) {
 	    reader.onload = function() {
-		    for (i=0; i<fileinput.files.length; i++){
+	    	for (i=0; i<fileinput.files.length; i++){
 			    
 		 
-		    file = fileinput.files[i];
-		    reader = new FileReader();
-		    reader.readAsArrayBuffer(file);
-
-	    	arrayBuffer = reader.result;
-		floatarray = new  Float32Array(arrayBuffer);
-		console.log(floatarray);
-		processdata(floatarray);   
-		    }
+		    	file = fileinput.files[i];
+		    	reader = new FileReader();
+		    	reader.readAsArrayBuffer(file);
+	
+			arrayBuffer = reader.result;
+			floatarray = new  Float32Array(arrayBuffer);
+			console.log(floatarray);
+			processdata(floatarray);   
+	    	}
 	    };
     	}
 
