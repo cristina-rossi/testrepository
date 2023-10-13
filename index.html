@@ -23,56 +23,7 @@
 	    
 	    };
     	}
-    	function loadfilex(fileinput) {
-	    reader = new FileReader();
-	    reader.onload = function() {
-	    	for (i=0; i<fileinput.files.length; i++){
-			    
-		 
-		    	file = fileinput.files[i];
-		    	reader.readAsArrayBuffer(file);
-	
-			arrayBuffer = reader.result;
-			floatarray = new  Float32Array(arrayBuffer);
-			console.log(floatarray);
-			processdata(floatarray);   
-	    	}
-	    };
-    	}
-
-
-    function loadfiles(files) {
-	function loadsingle(file) {
-	    reader = new FileReader();
-	    reader.readAsArrayBuffer(file);
-	    reader.onload = function() {
-	
-			arrayBuffer = reader.result;
-			floatarray = new  Float32Array(arrayBuffer);
-			console.log(floatarray);
-			processdata(floatarray);   
-	    
-	    };
-    	}
-    function setup_reader(file) {
-        var name = file.name;
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            var bin = e.target.result; //get file content
-        }
-         
-		    	reader.readAsArrayBuffer(file);
-	
-			arrayBuffer = reader.result;
-			floatarray = new  Float32Array(arrayBuffer);
-			console.log(floatarray);
-			processdata(floatarray);   
-    }
-
-    for (var i = 0; i <fileinput.files.length; i++) { loadsingle(fileinput.files[i]); }
-}
-
-	    
+    
     function readmultifiles(fileinput) {
 		    
 	const files = fileinput.files;
@@ -99,7 +50,7 @@
 </head>
 
 <body>
-<p> hellov </p>
+<p> hellocv </p>
     <input multiple type="file" id="FILE_INPUT" onchange="readmultifiles(this)" />
 </body>
 
