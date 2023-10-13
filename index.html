@@ -20,11 +20,15 @@
     function loadfile(fileinput) {
 	    file = fileinput.files[0];
 	    reader = new FileReader();
-	    reader.onload = () => resolve(reader.result);
-	    arrayBuffer=reader.readAsArrayBuffer(file);	  
-	    console.log(arrayBuffer);
-	    var view = new  Float32Array(arrayBuffer);
-	    console.log(view);
+	    reader.readAsText(file);
+
+	    reader.onload = function() {
+	    	arrayBuffer = reader.result;
+		console.log(arrayBuffer);
+		floatarray = new  Float32Array(arrayBuffer);
+		console.log(floatarray);
+	    };
+
     }
             
        
