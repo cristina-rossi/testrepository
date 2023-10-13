@@ -4,74 +4,25 @@
 <head>
     <script>
         
-        function OnFileLoadORIG() {
-            var file = document.getElementById("FileReader").files[0];
-            var textType = /text.*/;
-            var fileDisplayArea = document.getElementById("FileContent");
-            if (file.type.match(textType)) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    fileDisplayArea.innerText = reader.result;
-                }
-
-                reader.readAsText(file);
-            } else {
-                fileDisplayArea.innerText = "File not supported!"
-            }
-        }
-
-
-async function OnFileLoad() {
-          var file = document.getElementById("FileReader").files[0];
-  const arrayBuffer = await new Promise(resolve => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
-    reader.readAsArrayBuffer(file);
-  });
-    console.log(arrayBuffer);
-    var view = new  Float32Array(arrayBuffer);
-    console.log(view);
-  return arrayBuffer;
-}
-        
-        function OnFileLoadXX() {
-            var file = document.getElementById("FileReader").files[0];
-            var textType = /text.*/;
-            var fileDisplayArea = document.getElementById("FileContent");
-           
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    fileDisplayArea.innerText = reader.result;
-                }
-
-                var buffer = reader.readAsArrayBuffer(file);
-
-            console.log(reader);
-            console.log(buffer);
-var dv = new DataView(buffer);
-var vector_length = dv.getUint8(0);
-var width = dv.getUint16(1); // 0+uint8 = 1 bytes offset
-var height = dv.getUint16(3); // 0+uint8+uint16 = 3 bytes offset
-var vectors = new Float32Array(width*height*vector_length);
-for (var i=0, off=5; i<vectors.length; i++, off+=4) {
-  vectors[i] = dv.getFloat32(off);
-}
+    async function OnFileLoad() {
+	    var file = document.getElementById("FileReader").files[0];
+	    const arrayBuffer = await new Promise(resolve => {
+		    const reader = new FileReader();
+		    reader.onload = () => resolve(reader.result);
+		    reader.readAsArrayBuffer(file);
+	    });
+	    console.log(arrayBuffer);
+	    var view = new  Float32Array(arrayBuffer);
+	    console.log(view);
+	    return arrayBuffer;
+    }
             
-                view = new  Float32Array(buffer);
-            console.log("OK");
-            
-            console.log(buffer);
-            console.log(view);
-            console.log(vectors);
-        }
+       
     </script>
 </head>
 
 <body>
     <input type="file" id="FileReader" onchange="OnFileLoad()" />
-    <div id="FileContent">Your content will appear here G</div>
 </body>
 
 </html>
