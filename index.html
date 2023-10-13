@@ -30,7 +30,7 @@ async function OnFileLoad() {
     reader.readAsArrayBuffer(file);
   });
     console.log(arrayBuffer);
-    var view = new  Float32Array(buffer);
+    var view = new  Float32Array(arrayBuffer);
     console.log(view);
   return arrayBuffer;
 }
