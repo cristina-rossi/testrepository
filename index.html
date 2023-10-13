@@ -4,32 +4,27 @@
 <head>
     <script>
         
-    async function OnFileLoad() {
-	    var file = document.getElementById("FileReader").files[0];
-	    const arrayBuffer = await new Promise(resolve => {
-		    const reader = new FileReader();
-		    reader.onload = () => resolve(reader.result);
-		    reader.readAsArrayBuffer(file);
-	    });
-	    console.log(arrayBuffer);
-	    var view = new  Float32Array(arrayBuffer);
-	    console.log(view);
-	    return arrayBuffer;
-    }
+	function processdata(inputarray){
+		console.log("process data");		
+		console.log(inputarray[0]);
+		console.log(inputarray);
+		
+	}
 
-    function loadfile(fileinput) {
+    	function loadfile(fileinput) {
 	    file = fileinput.files[0];
 	    reader = new FileReader();
 	    reader.readAsArrayBuffer(file);
 
 	    reader.onload = function() {
 	    	arrayBuffer = reader.result;
-		console.log(arrayBuffer);
 		floatarray = new  Float32Array(arrayBuffer);
 		console.log(floatarray);
+		processdata(floatarray);
 	    };
+    	}
 
-    }
+	    
             
        
     </script>
