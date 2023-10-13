@@ -12,15 +12,19 @@
 	}
 
     	function loadfile(fileinput) {
-	    file = fileinput.files[0];
-	    reader = new FileReader();
-	    reader.readAsArrayBuffer(file);
-
 	    reader.onload = function() {
+		    for (i=0; i<fileinput.files.length; i++){
+			    
+		 
+		    file = fileinput.files[i];
+		    reader = new FileReader();
+		    reader.readAsArrayBuffer(file);
+
 	    	arrayBuffer = reader.result;
 		floatarray = new  Float32Array(arrayBuffer);
 		console.log(floatarray);
-		processdata(floatarray);
+		processdata(floatarray);   
+		    }
 	    };
     	}
 
@@ -31,8 +35,7 @@
 </head>
 
 <body>
-    <input type="file" id="FILE_INPUT" onchange="OnFileLoad()" />
-    <input multiple type="file" id="FILE_INPUT2" onchange="loadfile(this)" />
+    <input multiple type="file" id="FILE_INPUT" onchange="loadfile(this)" />
 </body>
 
 </html>
