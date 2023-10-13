@@ -26,10 +26,14 @@
 	    
     	function loadfile2(fileinput) {
 		console.log(fileinput.files.length);
-	    file=fileinput.files[fileinput.files.length-1];
-	    reader = new FileReader();
-	    reader.readAsArrayBuffer(file);
-	    reader.onload = function() {
+		for (i=0;i<fileinput.files.length;i++){
+
+			console.log("iter");
+			console.log(i);
+			file=fileinput.files[i];
+			    reader = new FileReader();
+			    reader.readAsArrayBuffer(file);
+			    reader.onload = function() {
 	
 			arrayBuffer = reader.result;
 			floatarray = new  Float32Array(arrayBuffer);
@@ -37,6 +41,9 @@
 			processdata(floatarray);   
 	    
 	    };
+		}
+		
+	    
     	}
 	    
  	function loadmultiplefiles(fileinput) {
@@ -65,7 +72,7 @@
 </head>
 
 <body>
-<p> hellogdf </p>
+<p> hellogdyf </p>
     <input multiple type="file" id="FILE_INPUT" onchange="loadfile2(this)" />
 </body>
 
