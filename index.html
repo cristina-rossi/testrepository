@@ -74,23 +74,24 @@
 
 	    
     function readmultifiles(fileinput) {
-	    
-  const files = fileinput.files;
-  Object.keys(files).forEach(i => {
-    const file = files[i];
-    const reader = new FileReader();
-	    reader.readAsArrayBuffer(file);
- 
-      //server call for uploading or reading the files one-by-one
-      //by using 'reader.result' or 'file'
-	    
-	    reader.onload = function() {
-	
-			arrayBuffer = reader.result;
-			floatarray = new  Float32Array(arrayBuffer);
-			console.log(floatarray);
-			processdata(floatarray);   
-    }
+		    
+	const files = fileinput.files;
+	Object.keys(files).forEach(i => {
+		const file = files[i];
+	    	const reader = new FileReader();
+	    	reader.readAsArrayBuffer(file);
+	 
+	      //server call for uploading or reading the files one-by-one
+	      //by using 'reader.result' or 'file'
+		    
+	    	reader.onload = function() {
+		
+				arrayBuffer = reader.result;
+				floatarray = new  Float32Array(arrayBuffer);
+				console.log(floatarray);
+				processdata(floatarray);   
+	    	}
+	}
   
 };
        
