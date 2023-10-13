@@ -65,6 +65,38 @@
 	     }
   	     loadsinglefile(0);
 	}
+
+	   
+
+
+
+const upload = async (event) => {
+  
+    // Convert the FileList into an array and iterate
+    let files = Array.from(event.target.files).map(file => {
+
+        // Define a new file reader
+        let reader = new FileReader();
+
+        // Create a new promise
+        return new Promise(resolve => {
+
+            // Resolve the promise after reading file
+            reader.onload = () => resolve(reader.result);
+
+            // Read the file as a text
+            reader.readAsText(file);
+
+        });
+
+    });
+
+    // At this point you'll have an array of results
+    let res = await Promise.all(files);
+	console.log("here");
+	console.log(res);
+  
+}
     
 
        
@@ -72,8 +104,11 @@
 </head>
 
 <body>
-<p> hellogdyf </p>
+<p> a </p>
     <input multiple type="file" id="FILE_INPUT" onchange="loadfile2(this)" />
+
+	
+<input onchange = 'upload(event)' type = 'file' multiple/>
 </body>
 
 </html>
